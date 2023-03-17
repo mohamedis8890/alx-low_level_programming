@@ -2,8 +2,8 @@
 #include <time.h>
 #include <stdio.h>
 /**
-* main - the main function, 
-* 
+* main - the main function,
+*
 * Return: 0, as required
 */
 int main(void)
