@@ -1,4 +1,4 @@
-#include <stdio.h>
+#include "main.h"
 /**
 * print_numbers - prints numbers 0 to 9 follwed ny a nwe line
 *
