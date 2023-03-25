@@ -1,9 +1,9 @@
 #include "main.h"
 
 /**
-* main - the main function, 
+* more_numbers - prints numbers from 0 to 14 10 times
 *
-* Return: 0, as required
+* Return: void
 */
 
 void more_numbers(void)
@@ -16,7 +16,7 @@ void more_numbers(void)
 	{
 		c = 48;
 
-		for (j=0; j <= 14; j++) /* The number iterator */
+		for (j = 0; j <= 14; j++) /* The number iterator */
 		{
 			if (j > 9)
 				_putchar('1');
