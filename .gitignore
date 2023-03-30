@@ -1,6 +1,8 @@
 create
 push
 newcfile
+_putchar.c
+*main.c
 0x04-more_functions_nested_loops/0-main.c
 *.swp
 \\
