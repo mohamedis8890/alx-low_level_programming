@@ -8,9 +8,29 @@
  */
 void print_number(int n)
 {
-	char c;
+	int i = 0;
+	int swap = 0;
 
-	c = n + '0';
+	if (n == 0)
+		_putchar('0');
 
-	_putchar(c);
+	if (n < 0)
+	{
+		_putchar('-');
+		n *= -1;
+	}
+
+	i = n;
+
+	while (i > 0)
+	{
+		swap = 10 * swap + i % 10;
+		i /= 10;
+	}
+
+	while (swap > 0)
+	{
+		_putchar((swap % 10) + '0');
+		swap /= 10;
+	}
 }
