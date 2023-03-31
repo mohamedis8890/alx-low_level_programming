@@ -9,7 +9,7 @@
 void print_number(int n)
 {
 	int i = 0;
-	int swap = 0;
+	unsigned int swap = 0;
 
 	if (n == 0)
 		_putchar('0');
