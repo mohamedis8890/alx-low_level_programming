@@ -9,10 +9,6 @@
 void print_number(int n)
 {
 	unsigned int i = 0;
-	unsigned int swap = 0;
-
-	if (n == 0)
-		_putchar('0');
 
 	if (n < 0)
 	{
@@ -22,15 +18,8 @@ void print_number(int n)
 
 	i = n;
 
-	while (i > 0)
-	{
-		swap = 10 * swap + i % 10;
-		i /= 10;
-	}
+	if (i / 10)
+		print_number(i / 10);
 
-	while (swap > 0)
-	{
-		_putchar((swap % 10) + '0');
-		swap /= 10;
-	}
+	_putchar((i % 10) + '0');
 }
