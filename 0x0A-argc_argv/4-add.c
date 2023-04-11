@@ -15,6 +15,7 @@ int main(int argc, char *argv[])
 {
 	int sum;
 	int n;
+	int *err;
 
 	if (argc == 1)
 	{
@@ -24,14 +25,16 @@ int main(int argc, char *argv[])
 
 	while (--argc)
 	{
-		n = atoi(argv[argc]);
-		if (*argv[argc] >= 48 && *argv[argc] <= 57)
-			sum += n;
-		else
+		n = strtol(argv[argc], &err, 10);
+		if (*err)
 		{
 			printf("Error\n");
 			return (1);
 		}
+
+		else
+			sum += n;
+
 	}
 
 	printf("%d\n", sum);
