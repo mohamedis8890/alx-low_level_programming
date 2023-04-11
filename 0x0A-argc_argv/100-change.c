@@ -51,6 +51,16 @@ int main(int argc, char *argv[])
 	return (0);
 }
 
+/**
+ * change - changes the amount based on a given coin
+ *
+ * @amount: a ointer to the amount to change
+ * @count: a pointer to the change count
+ * @coin: the coin to change on
+ *
+ * Return: Always 0.
+ */
+
 void change(int *amount, int *count, int coin)
 {
 	if (*amount >= coin)
