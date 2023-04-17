@@ -1,5 +1,5 @@
-#ifndef MAIN_H
-#define MAIN_H
+#ifndef DOG
+#define DOG
 /**
  * struct dog - a representation of a dog
  * @name: dog's name
@@ -14,6 +14,7 @@ struct dog
 	char *owner;
 	float age;
 };
-#endif
 
 void init_dog(struct dog *d, char *name, float age, char *owner);
+
+#endif
