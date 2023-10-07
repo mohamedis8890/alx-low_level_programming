@@ -25,25 +25,25 @@ int main(int argc, char *argv[])
 		return (0);
 	}
 
-	if (amount > 25)
+	if (amount >= 25)
 	{
 		coins += amount / 25;
 		amount = amount % 25;
 	}
 
-	if (amount > 10)
+	if (amount >= 10)
 	{
 		coins += amount / 10;
 		amount = amount % 10;
 	}
 
-	if (amount > 5)
+	if (amount >= 5)
 	{
 		coins += amount / 5;
 		amount = amount % 5;
 	}
 
-	if (amount > 2)
+	if (amount >= 2)
 	{
 		coins += amount / 2;
 		amount = amount % 2;
