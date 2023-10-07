@@ -1,16 +1,24 @@
+#include <stdio.h>
+#include <stdlib.h>
+
 #include "main.h"
+
+void change(int *amount, int *count, int coin);
+
 /**
  * main - prints the minimum number of coins to make
  * change for an amount of money.
- * @argc: arguments vector size
- * @argv: arguments vector
  *
- * Return: always zero.
+ * @argc: size of argumnets vector
+ * @argv: the argument vector
+ *
+ * Return: Always 0.
  */
+
 int main(int argc, char *argv[])
 {
-	int amount;
-	int coins = 0;
+	int amount = 0, count = 0, i;
+	int coins[] = {25, 10, 5, 2};
 
 	if (argc != 2)
 	{
@@ -19,37 +27,45 @@ int main(int argc, char *argv[])
 	}
 
 	amount = atoi(argv[1]);
+
 	if (amount < 0)
 	{
 		printf("0\n");
-		return (0);
+		return (1);
 	}
 
-	if (amount >= 25)
+	while (amount)
 	{
-		coins += amount / 25;
-		amount = amount % 25;
+		for (i = 0; i < 5; i++)
+			change(&amount, &count, coins[i]);
+
+		if (amount == 1)
+		{
+			count += amount;
+			amount = 0;
+		}
 	}
 
-	if (amount >= 10)
-	{
-		coins += amount / 10;
-		amount = amount % 10;
-	}
-
-	if (amount >= 5)
-	{
-		coins += amount / 5;
-		amount = amount % 5;
-	}
-
-	if (amount >= 2)
-	{
-		coins += amount / 2;
-		amount = amount % 2;
-	}
-
-	printf("%d\n", coins + amount);
+	printf("%d\n", count);
 
 	return (0);
+}
+
+/**
+ * change - changes the amount based on a given coin
+ *
+ * @amount: a ointer to the amount to change
+ * @count: a pointer to the change count
+ * @coin: the coin to change on
+ *
+ * Return: Always 0.
+ */
+
+void change(int *amount, int *count, int coin)
+{
+	if (*amount >= coin)
+	{
+		*count += *amount / coin;
+		*amount = *amount % coin;
+	}
 }
