@@ -8,3 +8,4 @@ _putchar.c
 .vscode/
 \\
 prev/
+.DS_Store
